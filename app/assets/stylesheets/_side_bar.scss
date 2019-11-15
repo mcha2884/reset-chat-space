@@ -1,0 +1,52 @@
+
+.side-header{
+  display:flex;
+  width:300px;
+  height: 100px;
+  align-items: center;
+  background-color:#253141 ;
+  padding: 20px;
+  box-sizing:border-box;
+  font-size:16px;
+  font-weight:bold;
+  color:#fff;
+  &__box {
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+    font-weight:bold;
+  }
+  &__box__menu {
+    display:flex;
+  }
+}
+.fa-edit{
+  color:#fff;
+}
+.fa-cog{
+  color:#fff;
+}
+  
+.groups{
+  height:calc(100vh - 70px);
+  padding:0 20px;
+  width:300px;
+  background-color:#2f3e51;
+  overflow:scroll;
+  box-sizing:border-box;
+    .group {
+    padding:20px 0 40px 0;
+    &__name{
+    color:#fff;
+    font-weight:bold ;
+    font-size:15px ;
+    }  
+    &__messeage{
+    color:#fff;
+    font-weight:bold ;
+    font-size:11px ;
+    margin-top:5px ;
+    }
+  }
+}   
+

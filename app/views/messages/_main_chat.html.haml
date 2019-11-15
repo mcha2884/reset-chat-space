@@ -1,0 +1,23 @@
+.chat
+  .chat_header
+    .left_chat_header
+      .chat-group-name
+        %h2 ミノル組
+      .chat-group-messeage
+        %p3 Member:
+    .right_chat_header
+      %link_to{href: "#"}
+        %p3 Edit
+  .chat_body
+    .chat_body_person
+      %h3 ミノルちゃん
+    .person-message
+      %p 初めての投稿です。
+  .chat_form
+    .form_input
+      %input{placeholder:"type a message", type:  "text"}/
+      %label
+        .fas.fa-image
+        %input.file-coll{type: "file"}/
+    .form_submit
+      %input{type: "submit", value: "Send", class: "btn" }/
