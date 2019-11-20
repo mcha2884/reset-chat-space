@@ -7,11 +7,12 @@
         Member:
         -@group.users.each do|user|
           =user.name
-    =link_to edit_group_path(@group) do 
-      .right_chat_header   Edit
+    .right_chat_header
+      =link_to edit_group_path(@group) do 
+        Edit
   .chat_body
-    = render partial: 'message', collection: @messages
     .messages
+      = render partial: 'message', collection: @messages
     -# .chat_body_person
     -# .person-message
   .chat_form
