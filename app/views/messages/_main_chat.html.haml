@@ -2,16 +2,18 @@
   .chat_header
     .left_chat_header
       .chat-group-name
-        %h2 ミノル組
-      .chat-group-messeage
-        %p3 Member:
-    .right_chat_header
-      %p3 Edit
+        =@group.name
+      .chat-group-message
+        Member:
+        -@group.users.each do|user|
+          =user.name
+    =link_to edit_group_path(@group) do 
+      .right_chat_header   Edit
   .chat_body
-    .chat_body_person
-      %h3 ミノルちゃん
-    .person-message
-      %p 初めての投稿です。
+    = render partial: 'message', collection: @messages
+    .messages
+    -# .chat_body_person
+    -# .person-message
   .chat_form
     .chat-form__input
       = form_for [@group, @message] do |f|

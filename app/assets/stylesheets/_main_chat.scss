@@ -17,7 +17,7 @@
   font-size:20px
 }
 
-.chat-group-messeage{
+.chat-group-message{
   padding:0 0 0 40px;
   font-size:15px;
   color:#999;
@@ -34,6 +34,7 @@
   height:calc(100vh - 170px);
   background-color:#fafafa;
   padding-left:40px;
+  overflow:scroll;
 }
 
 .chat_body_person {
@@ -44,7 +45,7 @@
   }
 }
 
-.person-message {
+.upper-message__user-name {
   color:#434A54;
   font-size:14px;
 }
