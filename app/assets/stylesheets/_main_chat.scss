@@ -1,5 +1,5 @@
 .chat {
-  width:100%;
+  width:calc(100vw - 300px);
   height:100vh;
   &_header{
     display: flex;
@@ -17,7 +17,7 @@
   font-size:20px
 }
 
-.chat-group-messeage{
+.chat-group-message{
   padding:0 0 0 40px;
   font-size:15px;
   color:#999;
@@ -27,13 +27,14 @@
   margin: 28px 40px;
   padding: 15px 20px 15px 20px ;
   border: 1px solid skyblue;
-  color : skyblue;  
+  a{color : skyblue;}  
 }
 
 .chat_body {
   height:calc(100vh - 170px);
   background-color:#fafafa;
   padding-left:40px;
+  overflow:scroll;
 }
 
 .chat_body_person {
@@ -44,7 +45,7 @@
   }
 }
 
-.person-message {
+.upper-message__user-name {
   color:#434A54;
   font-size:14px;
 }
@@ -55,38 +56,34 @@
 }
 
 .chat_form{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: fixed;
+  bottom:0;
   width:100%;
-  height:50px;
+  padding:15px 40px;
   background-color:#ddd;
-  padding:10px 0 10px 0;
-  .form_submit {
-    margin-right:40px;
+.form__message{
+  position: relative;
+  width:950px;
+  height:50px;
+  margin-right:25px;
   }
-  .btn {
-    background-color:#38aef0;
-    color:#fff;
-    height:50px;
-    width:70px;
-    border:none;
+  .hidden {
+  overflow: hidden;
+  display:none;
   }
-
-  .form_input {
-    position: relative;
-    width:100%;
-    padding-left:40px;
-    input {
-    width:98%;
-    height:50px;
-    }
-    .fa-image {
+  .form__mask__image {
+  position: relative;
+  }
+  .icon{
     position: absolute;
-    right:30px;
-    top:38%;
-    }
-  
+    line-height: 50px;
+    right:50px;
   }
-
+  .form__submit{
+    width: 70px;
+    height:50px;
+    border-style: none;
+    color:#fff;
+    background-color:#38aef0;
+  }
 }
