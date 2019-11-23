@@ -58,6 +58,7 @@
 .chat_form{
   position: fixed;
   bottom:0;
+  height:70px;
   width:100%;
   padding:15px 40px;
   background-color:#ddd;
@@ -80,6 +81,7 @@
     right:50px;
   }
   .form__submit{
+
     width: 70px;
     height:50px;
     border-style: none;
