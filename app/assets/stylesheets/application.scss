@@ -1,12 +1,13 @@
-@import "reset";
+@import "config/colors";
+@import "config/font-size";
+@import "config/reset";
+@import "mixins/vendor_prefix";
 @import "font-awesome-sprockets";
 @import "./font-awesome";
-@import "side_bar";
-@import "main_chat";
+@import "messages/messages.scss";
 @import "modules/user";
-@import "config/colors";
-@import "modules/flash";
+@import "modules/side_bar";
 @import "modules/group";
-.wrapper {
-  display:flex;
-}
+@import "modules/main_chat";
+@import "modules/flash";
+*{box-sizing: border-box;}

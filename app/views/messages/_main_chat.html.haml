@@ -1,25 +1,25 @@
 .chat
-  .chat_header
-    .left_chat_header
-      .chat-group-name
-        =@group.name
-      .chat-group-message
-        Member:
-        -@group.users.each do|user|
-          =user.name
-    .right_chat_header
-      =link_to edit_group_path(@group) do 
-        Edit
-  .chat_body
-    .messages
-      = render partial: 'message', collection: @messages
-    -# .chat_body_person
-    -# .person-message
-  .chat_form
-    .chat-form__input
-      = form_for [@group, @message] do |f|
-        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+  .header
+    .left-header
+      .left-header__title
+        = @group.name
+      %ul.left-header__members
+        Member：
+        - @group.users.each do |user|
+          %li.member
+            = user.name
+    .right-header
+      = link_to edit_group_path(@group.id) do
+        .right-header__button
+          Edit
+      
+  .messages
+    = render @messages
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
         = f.label :image, class: 'form__mask__image' do
-          = icon('fa', 'image', class: 'icon')
-        = f.file_field :image, class: 'hidden'
-        = f.submit 'Send', class: 'form__submit'
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
