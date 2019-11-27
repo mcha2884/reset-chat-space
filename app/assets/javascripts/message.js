@@ -1,9 +1,9 @@
 $(function(){
-  //メッセージ送信の非同期
+  //メッセージ送信の非同期はこの下の記述
   function buildHTML(message){
-    var content = message.content ? `${ message.content }` : "";
-    var img  = message.image ? `<img class="lower-message__image" src="${ message.image }">` : "";
-      var html =
+    let content = message.content ? `${ message.content }` : "";
+    let img  = message.image ? `<img class="lower-message__image" src="${ message.image }">` : "";
+      let html =
        `<div class = "message" data-message-id = ${ message.id }>
           <div class="upper-message">
             <div class="upper-message__user-name">
@@ -24,8 +24,8 @@ $(function(){
     }
   $('#new_message').on('submit', function(e){
     e.preventDefault();
-    var formData = new FormData(this);
-    var url = $(this).attr('action')
+    let formData = new FormData(this);
+    let url = $(this).attr('action')
     $.ajax({
       url: url,  
       type: 'POST',  
@@ -45,11 +45,11 @@ $(function(){
     });
     return false;
   });
-  //自動更新機能
+  //自動更新機能はこの下の記述
   var reloadMessages = function() {
-    //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
+    
     if (window.location.href.match(/\/groups\/\d+\/messages/)){
-      var last_message_id = $('.message:last').data('message-id');
+      let last_message_id = $('.message:last').data('message-id');
       
       $.ajax({
         url: "api/messages",
@@ -59,7 +59,7 @@ $(function(){
         data: {id: last_message_id}
       })
       .done(function(messages) {
-        var insertHTML = '';
+        let insertHTML = '';
           messages.forEach(function(message){
             insertHTML = buildHTML(message);
             $('.messages').append(insertHTML);
