@@ -1,21 +1,19 @@
-.chat-side
-  .side-header
-    .side-header__box
-      %p.side-header__box__user-name
-        = current_user.name
-      %ul.side-header__box__menu
-        %li.side-header__box__menu__new-group
-          = link_to new_group_path do
-            = fa_icon 'pencil-square-o', class: 'fa-edit'
-        %li.side-header__box__menu__edit-user
-          = link_to edit_user_path(current_user) do
-            = fa_icon 'cog', class: 'fa-cog'
-            
+.side-bar
+  .header
+    %h3.header__name
+      = current_user.name
+    %ul.header__lists
+      %li.list
+        = link_to new_group_path do
+          = icon('fas', 'edit', class: 'icon')
+      %li.list
+        = link_to edit_user_path(current_user) do
+          = icon('fas', 'cog', class: 'icon')
   .groups
     - current_user.groups.each do |group|
       .group
-        = link_to group_messages_path(group) do
+        = link_to group_messages_path(group),class: "group__link" do
           .group__name
-            = group.name           
-          .group__messeage
+            = group.name
+          .group__message
             = group.show_last_message
