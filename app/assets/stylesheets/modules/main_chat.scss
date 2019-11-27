@@ -1,4 +1,5 @@
 .chat {
+  overflow: hidden;
   width: calc(100% - 300px);
   .header {
     box-sizing: border-box;
@@ -69,6 +70,8 @@
     height: 90px;
     padding: 20px 50px 20px 40px;
     &__message {
+      padding-left:10px;
+      box-sizing: border-box;
       border: none;
       float: left;
       height: 50px;
